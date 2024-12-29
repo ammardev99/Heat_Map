@@ -51,36 +51,38 @@ class _PosNavBarState extends State<CustomNavBar> {
       floatingActionButton: Stack(
         children: [
           // Blue FAB that stays in the center
-          Positioned(
-            bottom: 30,
-            left: MediaQuery.of(context).size.width / 2 -
-                25, // Center the blue FAB
-            child: FloatingActionButton(
-              onPressed: () {
-                setState(() {
-                  currentIndex =
-                      2; // This doesn't affect the HomePage or List view toggle
-                });
-              },
-              shape: const CircleBorder(),
-              backgroundColor: Colors.transparent,
-              elevation: 0,
-              child: Container(
-                height: 50,
-                width: 50,
-                decoration: const BoxDecoration(
-                  color: AppColors.primaryBlue,
-                  shape: BoxShape.circle,
-                ),
-                child: Center(
-                    child: SizedBox(
-                  height: 25,
-                  width: 25,
-                  child: SvgPicture.asset('assets/svg/gift_icon.svg'),
-                )),
-              ),
-            ),
+         Positioned(
+  bottom: 35,
+  left: MediaQuery.of(context).size.width / 2 - 26, // Adjust centering for larger size
+  child: FloatingActionButton(
+    onPressed: () {
+      setState(() {
+        currentIndex = 2; // This doesn't affect the HomePage or List view toggle
+      });
+    },
+    shape: const CircleBorder(),
+    backgroundColor: Colors.transparent,
+    elevation: 0,
+    child: Container(
+      height: 70, // Increased height
+      width: 70, // Increased width
+      decoration: const BoxDecoration(
+        color: AppColors.primaryBlue,
+        shape: BoxShape.circle,
+      ),
+      child: Center(
+        child: SizedBox(
+          height: 40, // Increased icon size
+          width: 40,  // Increased icon size
+          child: SvgPicture.asset(
+            'assets/svg/gift_icon.svg',
           ),
+        ),
+      ),
+    ),
+  ),
+),
+
 
           // Red FAB for Home (index 0), positioned on the right
           if (currentIndex == 0) // Only show on Home screen

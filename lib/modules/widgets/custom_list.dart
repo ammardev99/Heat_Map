@@ -144,9 +144,12 @@ class CustomListViewWidget extends StatelessWidget {
                     ),
                   ),
                   const Divider(),
-                  const Text(
-                    '42 bars found near the address',
-                    style: TextStyle(color: AppColors.grey),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15),
+                    child: const Text(
+                      '42 bars found near the address',
+                      style: TextStyle(color: AppColors.grey),
+                    ),
                   ),
                   ListView.builder(
                     physics: const BouncingScrollPhysics(),

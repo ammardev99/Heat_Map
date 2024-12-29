@@ -28,7 +28,7 @@ class CustomListItem extends StatelessWidget {
           // Circular Image/Icon
           CircleAvatar(
             backgroundImage: NetworkImage(imageUrl),
-            radius: 25,
+            radius: 22,
           ),
           const SizedBox(width: 10),
           // Title and Details
@@ -41,20 +41,22 @@ class CustomListItem extends StatelessWidget {
                     Text(
                       title,
                       style: const TextStyle(
-                          fontSize: 16, fontWeight: FontWeight.bold),
+                          fontSize: 14, fontWeight: FontWeight.w500),
                     ),
-                    const SizedBox(width: 3),
+                    const SizedBox(width: 5),
                     if (isVerified)
-                      const Icon(Icons.verified, size: 16, color: Colors.blue),
+                      const Icon(Icons.verified, size: 14, color: Colors.blue),
                   ],
                 ),
+              
                 Row(
                   children: [
                     Text(
                       rating.toString(),
-                      style: const TextStyle(fontSize: 12),
+                      style: const TextStyle(fontSize: 13,color: AppColors.grey,fontWeight: FontWeight.w400),
+                      
                     ),
-                    SizedBox(width: Get.width * .01),
+                    SizedBox(width: Get.width * .02),
                     Row(
                       children: List.generate(4, (index) {
                         return Icon(
@@ -64,7 +66,7 @@ class CustomListItem extends StatelessWidget {
                         );
                       }),
                     ),
-                    SizedBox(width: Get.width * .01),
+                    SizedBox(width: Get.width * .02),
                     Container(
                         padding: const EdgeInsets.symmetric(
                             horizontal: 8, vertical: 4),

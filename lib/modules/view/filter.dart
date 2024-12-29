@@ -12,6 +12,7 @@ class FilterOptions extends StatefulWidget {
 }
 
 class _FilterOptionsState extends State<FilterOptions> {
+  
   double heatScore = 50; // Default Heat Score
   int? activeIndex; // To track the active ExpansionTile
   late ValueNotifier<double> _valueNotifier = ValueNotifier(0);
@@ -43,6 +44,7 @@ class _FilterOptionsState extends State<FilterOptions> {
   @override
   Widget build(BuildContext context) {
     return Padding(
+      
       padding: const EdgeInsets.all(16.0),
       child: SingleChildScrollView(
         child: Column(
@@ -54,7 +56,7 @@ class _FilterOptionsState extends State<FilterOptions> {
               children: [
                 const Text(
                   "Filtering and Sorting",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
                 IconButton(
                   style: const ButtonStyle(
@@ -71,11 +73,12 @@ class _FilterOptionsState extends State<FilterOptions> {
               index: 0,
               icon: SvgPicture.asset('assets/svg/heat.svg'),
               title: "Heat Score",
+              
               content: CircularSeekBar(
                 width: double.infinity,
                 height: 200,
                 progress: _progress,
-                barWidth: 8,
+                barWidth: 14,
                 startAngle: 45,
                 sweepAngle: 270,
                 strokeCap: StrokeCap.butt,
@@ -186,7 +189,7 @@ class _FilterOptionsState extends State<FilterOptions> {
     required Widget content,
   }) {
     return Container(
-      // margin: const EdgeInsets.only(bottom: 8),
+     
       decoration: BoxDecoration(
         color: Colors.transparent,
         border: Border(
@@ -201,7 +204,7 @@ class _FilterOptionsState extends State<FilterOptions> {
         ),
         child: ExpansionTile(
           leading: icon,
-          title: Text(title),
+          title: Text(title,style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500),),
           onExpansionChanged: (expanded) {
             setState(() {
               activeIndex = expanded ? index : null;
@@ -209,10 +212,10 @@ class _FilterOptionsState extends State<FilterOptions> {
           },
           children: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(0.0),
               child: content,
             ),
-            const SizedBox(height: 8), // Add space at the bottom
+            const SizedBox(height: 4), // Add space at the bottom
           ],
         ),
       ),

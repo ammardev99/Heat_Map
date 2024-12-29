@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
          
           // Overlay content
           Positioned(
-            top: 100,
+            top: 50,
             left: 20,
             right: 20,
             child: Row(
@@ -66,24 +66,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
 
-                // Expanded(
-                //   child: TextField(
-                //     style: const TextStyle(color: Colors.black),
-                //     decoration: InputDecoration(
-                //       filled: true,
-                //       fillColor: Colors.white,
-                //       hintText: 'Enter text here',
-                //       border: OutlineInputBorder(
-                //         borderRadius: BorderRadius.circular(8.0),
-                //         borderSide: BorderSide.none,
-                //       ),
-                //       contentPadding:
-                //           const EdgeInsets.symmetric(horizontal: 16),
-                //     ),
-                //   ),
-                // ),
-                // const SizedBox(width: 10),
-                // Circular Button
+            
                 SizedBox(width: Get.width * .02),
                 GestureDetector(
                   onTap: () {
